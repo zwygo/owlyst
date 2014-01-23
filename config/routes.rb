@@ -1,7 +1,11 @@
 Myapp::Application.routes.draw do
-  get "welcome/index"
 
   root :to => 'welcome#index'
+
+  namespace :admin do
+    root to: "admin#index"
+    resources :users
+  end
 
   match 'api/:class' => 'api#call', via: [:get, :post]
 

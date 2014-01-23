@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
 
-  API_CLASSES = [ApiList]
+  API_CLASSES = [ApiUser]
 
   def call
     req = request.raw_post
@@ -9,14 +9,14 @@ class ApiController < ApplicationController
     ##'{method:"user.status", params:{email:"renarsg@gmail.com", pass:"labais"}}'
     begin
       req_obj = ActiveSupport::JSON.decode(req)
-      raise Hell.new("Bad request") if req_obj.blank? || req_obj.class != Hash
-      raise Hell.new("Method missing") unless req_obj.keys.include?('method')
+      raise Exception.new("Bad request") if req_obj.blank? || req_obj.class != Hash
+      raise Exception.new("Method missing") unless req_obj.keys.include?('method')
       params = req_obj['params'] || {}
       for key in params.keys
         params[key.to_sym] = params[key]
       end
       mm = req_obj['method'].split('.')
-      raise Hell.new("Method must be in form class.method") unless mm.length == 2
+      raise Exception.new("Method must be in form class.method") unless mm.length == 2
       class_name = mm[0]
       method = "ns_#{mm[1]}"
       class_class = nil
@@ -25,7 +25,7 @@ class ApiController < ApplicationController
           class_class = c
         end
       end
-      raise Hell.new("Api class not found") if class_class.nil?
+      raise Exception.new("Api class not found") if class_class.nil?
       c = class_class.new
       c.params = params
       c.request = request
