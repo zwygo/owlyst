@@ -1,0 +1,53 @@
+body {
+  background: #e6e6e6;
+}
+.signup {
+  padding: 50px 0px;
+}
+.signup .signup_form_section {
+  background: #563d7c;
+  color: #cdbfe3;
+  padding: 50px 0px;
+  font-size: 18px;
+}
+.signup .signup_form_section h1 {
+  font-size: 48px;
+  font-weight: 300;
+  margin: 0px;
+  margin-bottom: 30px;
+  color: white;
+}
+.signup .signup_form_section .learn_more_button {
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.3;
+  transition: 0.5s;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  border-bottom: 1px dotted white;
+}
+.signup .signup_form_section .learn_more_button:hover {
+  text-decoration: none;
+  opacity: .8;
+}
+.signup .signup_form_section label {
+  font-size: 22px;
+  font-weight: 200;
+}
+.signup .signup_form_section .signup_input {
+  font-size: 18px;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
+  border-radius: 0;
+  background-clip: padding-box;
+  height: auto;
+  line-height: 1;
+  padding: 10px;
+}
+.signup .signup_form_section .signup_button {
+  margin-top: 30px;
+}

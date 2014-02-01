@@ -1,0 +1,62 @@
+@import "lesshat.less";
+
+
+@main_blue: #428bca;
+@dark_blue: #254f6e;
+@main_purple: #563d7c;
+@light_purple: #cdbfe3;
+@dark_grey: #333;
+@light_grey: #888;
+@dark_grey_hover: #454545;
+
+body{
+	background: #e6e6e6;
+}
+.signup{
+	padding: 50px 0px;
+
+	.signup_form_section{
+		background: @main_purple;
+		color: @light_purple;
+		padding: 50px 0px;
+		font-size: 18px;
+
+		h1{
+			font-size: 48px;
+			font-weight: 300;
+			margin: 0px;
+			margin-bottom: 30px;
+			color: white;
+		}
+		.learn_more_button{
+			font-size: 24px;
+			font-weight: 300;
+			color: white;
+			opacity: 0.3;
+			transition: 0.5s;
+			padding-bottom: 5px;
+			display: inline-block;
+			margin-top: 10px;
+			border-bottom: 1px dotted white;
+
+			&:hover{
+				text-decoration: none;
+				opacity: .8;
+			}
+		}
+		label{
+			font-size: 22px;
+			font-weight: 200;
+		}
+		.signup_input{
+			font-size: 18px;
+			.border-radius(0);
+			height: auto;
+			line-height: 1;
+			padding: 10px;
+		}
+		.signup_button{
+			margin-top: 30px;
+		}
+	}
+}
