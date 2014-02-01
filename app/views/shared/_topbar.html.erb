@@ -17,8 +17,8 @@
         <li><a href="#" class="topbar_icon"><i class="glyphicon glyphicon-white glyphicon-home"></i></a></li>
         <li><a href="#" class="topbar_icon"><i class="glyphicon glyphicon-white glyphicon-cog"></i></a></li>
         <% if current_user %>
-          <li><a href="#"><%= current_user.name %></l>
-            <li><a href="/logout">Log out</l>
+          <li><a href="#"><%= current_user.name %></a></li>
+            <li><a href="/logout">Log out</a></li>
         <% else %>
           <li><a href="/signup">Sign up</a></li>
         <% end %>
