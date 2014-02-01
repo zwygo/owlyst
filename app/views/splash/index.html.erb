@@ -15,6 +15,11 @@
     <!-- Custom styles for this template -->
     <link href="dist/css/style.css" rel="stylesheet">
 
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="/js/owlyst.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
@@ -35,7 +40,7 @@
                 <h3>Created on 02/01/14 at 11:14am</h3>
                 <ul class="list_actions_wrapper clearfix">
                   <li>
-                    <a href="#">edit</a>
+                    <a href="#" class="edit_list">edit</a>
                   </li>
                   <li>
                     <span>&middot;</span>
@@ -88,23 +93,15 @@
               </div>
             </div>
           </div>
-          
-          
-          
-          
-          
-          
-          
-          
         </div>
       </div>
     </div>
+    <div class="create_list">
+      <input type="text" placeholder="List Name" id="create_name">
+      <input type="text" placeholder="Item 1" class="create_item">
+      <input type="text" placeholder="Item 2" class="create_item">
+      <button class="btn btn-medium" id="create_list">Create</button>
+    </div>
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
   </body>
 </html>
