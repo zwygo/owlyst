@@ -1,20 +1,20 @@
 class ListController < ApplicationController
 
   def create
-    render :json => {:error => "No user"} if current_user.nil?
+    render :json => {:error => "No user"} and return if current_user.nil?
     title = params[:title]
     list_params = {
       :user_id => current_user.id,
-      :title => tiele
+      :title => title,
+      :list_item_ids => []
     }
     list = List.new(list_params)
     if list.save
       params[:items].each do |item|
         title = item
-        list.add_item(title, "")
+        list.add_item(current_user.id, title, "")
       end
       render :json => {:list => list}
-      redirect_to root_url
     else
       render :json => {:error => @user.errors.full_messages}
     end

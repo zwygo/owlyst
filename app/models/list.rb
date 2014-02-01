@@ -1,11 +1,10 @@
 class List < ActiveRecord::Base
 
-  def add_item(title, text)
-    raise 'No user' if current_user.nil?
+  def add_item(user_id, title, text)
     item_params = {
       :title => title,
       :text => text,
-      :user_id => current_user.id,
+      :user_id => user_id,
       :list_id => self.id,
       :status => ""
     }

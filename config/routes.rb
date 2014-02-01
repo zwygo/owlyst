@@ -8,7 +8,7 @@ Myapp::Application.routes.draw do
   end
 
   match 'user/:action', to: 'user#:action', via: [:get]
-  match 'user/:action', to: 'user#:action', via: [:get]
+  match 'list/:action', to: 'list#:action', via: [:get]
 
   match 'api/:class' => 'api#call', via: [:get, :post]
   match 'signup' => 'splash#signup', via: [:get, :post]
