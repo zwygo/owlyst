@@ -18,12 +18,14 @@ body {
 }
 .navbar-owlyst {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-  background-color: #563d7c;
-  border-color: #463265;
+  border-color: transparent;
+  background-color: #333333;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .navbar-owlyst .navbar-nav > li > a {
-  color: #cdbfe3;
+  color: #888888;
+  border-bottom: 5px solid transparent;
+  transition: 0.5;
 }
 .navbar-owlyst .navbar-nav > li .topbar_icon {
   padding-left: 10px;
@@ -37,7 +39,7 @@ body {
 .navbar-owlyst .navbar-nav > .active > a,
 .navbar-owlyst .navbar-nav > .active > a:hover {
   color: #fff;
-  background-color: #463265;
+  border-bottom: 5px solid #563d7c;
 }
 .navbar-owlyst .navbar-owlyst-collapse {
   border-color: #463265;
