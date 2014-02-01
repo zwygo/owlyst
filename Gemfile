@@ -7,7 +7,7 @@ gem 'pg'
 gem 'jquery-rails'
 
 gem 'rest-client'
-gem "bcrypt-ruby", :require => "bcrypt"
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'unicorn'
 

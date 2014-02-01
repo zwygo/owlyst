@@ -1,19 +1,19 @@
 class User < ActiveRecord::Base
-  def self.authenticate(email, password)
-    user = find_by_email(email)
+  has_secure_password
 
-    return user if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-    return nil
-  end
+  validates_uniqueness_of :email
 
-  def self.create_user(name, email, password)
-    password_salt = BCrypt::Engine.generate_salt()
-    password_hash = BCrypt::Engine.hash_secret(password, password_salt)
-    User.create(
-      :name => name,
-      :email => email,
-      :password_salt => password_salt,
-      :password_hash => password_hash
-    )
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.username = auth.info.name
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
+      user.email = auth.info.email
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
   end
 end
