@@ -25,7 +25,7 @@ body {
 .navbar-owlyst .navbar-nav > li > a {
   color: #888888;
   border-bottom: 5px solid transparent;
-  transition: 0.5;
+  transition: 0.5s;
 }
 .navbar-owlyst .navbar-nav > li .topbar_icon {
   padding-left: 10px;

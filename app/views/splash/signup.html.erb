@@ -13,7 +13,7 @@
     <link href="dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="dist/css/style.css" rel="stylesheet">
+    <link href="dist/css/signup.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,13 +24,53 @@
   <body>
     <%= render "shared/topbar" %>
     <div class="signup">
-      <form action="/user/create_from_email" method="GET" name="user">
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password_confirmation" placeholder="Confirm Password">
-        <input type="submit" value="Submit">
-      </form>
+      <div class="signup_form_section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <h1>Create a smart wishlist for your life</h1>
+              <p>
+                Mollit irony fingerstache dolore pork belly Thundercats blog master cleanse hoodie voluptate cray XOXO, irure scenester freegan. Ex fanny pack Terry Richardson est, keffiyeh mumblecore et hoodie Tumblr raw denim yr gluten-free. Voluptate raw denim flexitarian stumptown anim eiusmod, Marfa fashion axe Shoreditch photo booth PBR&B do labore Pinterest 90's. Roof party 3 wolf moon direct trade banh mi biodiesel, freegan Brooklyn whatever DIY skateboard disrupt Vice bitters culpa. American Apparel accusamus sunt craft beer, ea umami VHS consequat whatever mumblecore. Brunch ut Etsy sriracha. Laboris sed hoodie proident, minim authentic et keffiyeh vero Blue Bottle odio velit.
+              </p>
+              <a href="#" class="learn_more_button">Learn More &#187;</a>
+            </div>
+            <div class="col-md-4">
+              <!--
+              <form action="/user/create_from_email" method="GET" name="user">
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password_confirmation" placeholder="Confirm Password">
+                <input type="submit" value="Submit">
+              </form>
+            -->
+
+
+
+
+              <form role="form" action="/user/create_from_email" method="GET" name="user">
+                <div class="form-group">
+                  <label for="user_name">Name</label>
+                  <input type="text" class="form-control signup_input" id="user_name" name="name" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                  <label for="user_email">Email address</label>
+                  <input type="email" class="form-control signup_input" id="user_email" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="user_password">Password</label>
+                  <input type="password" class="form-control signup_input" id="user_password" name="password" placeholder="Enter password">
+                </div>
+                <div class="form-group">
+                  <label for="user_password_confirm">Confirm Password</label>
+                  <input type="password" class="form-control signup_input" id="user_password_confirm" name="password_confirmation" placeholder="Confirm password">
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg btn-block signup_button">Signup Now!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
