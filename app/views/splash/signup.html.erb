@@ -14,6 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="dist/css/signup.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/signup.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,7 +49,7 @@
 
 
 
-              <form role="form" action="/user/create_from_email" method="GET" name="user">
+              <form role="form" action="/user/create_from_email" method="GET" name="user" class="signup_form">
                 <div class="form-group">
                   <label for="user_name">Name</label>
                   <input type="text" class="form-control signup_input" id="user_name" name="name" placeholder="Enter full name">
@@ -67,6 +68,19 @@
                 </div>
                 <button type="submit" class="btn btn-warning btn-lg btn-block signup_button">Signup Now!</button>
               </form>
+              <form role="form" action="/user/create_from_email" method="GET" name="user" class="login_form" style="display:none;">
+                <div class="form-group">
+                  <label for="user_email">Email address</label>
+                  <input type="text" class="form-control signup_input" id="login_email" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="user_password">Password</label>
+                  <input type="password" class="form-control signup_input" id="login_password" name="password" placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg btn-block" id="login_button">Log in</button>
+              </form>
+              <p class="signup_form">Already have an account? <a href="#" id="show_login_form">Log in</a></p>
+              <p class="login_form" style="display:none;">Don't have an account yet? <a href="#" id="show_signup_form">Sign up</a></p>
             </div>
           </div>
         </div>
