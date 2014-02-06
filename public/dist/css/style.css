@@ -210,6 +210,10 @@ body {
   font-size: 15px;
   background: none;
 }
+.white_box .list_item_wrapper li .edit_list_item_input.edit_title_item_input {
+  color: #563d7c;
+  font-weight: bold;
+}
 .main_list_area {
   height: 100%;
   background: white;

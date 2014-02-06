@@ -80,6 +80,11 @@
               </div>
               <div class="list_body">
                 <ul class="list_item_wrapper clearfix">
+                  <li class="clearfix show_in_edit_mode">
+                    <div class="show_in_edit_mode">
+                      <input type="text" class="form-control edit_list_item_input edit_title_item_input"  value="Harold and Kumar go to White Castle" placeholder="Enter list title...">
+                    </div>
+                  </li>
                   <li class="clearfix">
                     <div class="show_in_view_mode">
                       <span class="checkbox list_item">
@@ -145,7 +150,15 @@
               </div>
               <div class="list_body">
                 <ul class="list_item_wrapper clearfix">
+                  <li class="clearfix show_in_edit_mode">
+                    <div class="show_in_edit_mode">
+                      <input type="text" class="form-control edit_list_item_input edit_title_item_input"  value="<%= l['title'] %>" placeholder="Enter list title...">
+                    </div>
+                  </li>
                   <% l['list_items'].each do |li| %>
+                  <li class="clearfix show_in_edit_mode">
+                    <input type="text" class="form-control add_new_list_item_input" placeholder="Enter list title...">
+                  </li>
                   <li class="clearfix" liid="<%= li['liid']%>">
                     <div class="show_in_view_mode">
                       <span class="checkbox list_item">
