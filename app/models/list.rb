@@ -21,4 +21,12 @@ class List < ActiveRecord::Base
     ListItem.destroy_all(:list_id => self.id.to_s)
   end
 
+  def reorder(newOrder)
+    puts newOrder
+    if self.list_item_ids.sort == newOrder.sort
+      return self.update({:list_item_ids => newOrder})
+    end
+    return nil
+  end
+
 end

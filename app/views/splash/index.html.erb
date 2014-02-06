@@ -149,7 +149,8 @@
               </div>
               <div class="list_body">
                 <ul class="list_item_wrapper clearfix">
-                  <li class="clearfix">
+                  <% l['list_items'].each do |li| %>
+                  <li class="clearfix" liid="<%=li['liid']%>">
                     <div class="show_in_view_mode">
                       <span class="checkbox list_item">
                         <label>
