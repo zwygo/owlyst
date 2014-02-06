@@ -53,6 +53,12 @@ body {
   font-size: 24px;
   padding-right: 25px;
 }
+.navbar-owlyst .navbar-brand .glyphicon {
+  font-size: 16px;
+  color: #998bb1;
+  top: -1px;
+  margin-right: 5px;
+}
 .navbar-owlyst .navbar-nav > .active > a,
 .navbar-owlyst .navbar-nav > .active > a:hover {
   color: #fff;
@@ -89,6 +95,11 @@ body {
   padding: 0px 10px;
   margin-top: 10px;
   color: #563d7c;
+}
+.white_box .list_header h2 .glyphicon {
+  font-size: 14px;
+  top: -2px;
+  color: #998bb1;
 }
 .white_box .list_header h2 a {
   color: #563d7c;
