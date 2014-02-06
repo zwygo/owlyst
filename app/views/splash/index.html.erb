@@ -17,6 +17,7 @@
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="/js/ajax.js"></script>
     <script type="text/javascript" src="/js/owlyst.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
 
@@ -33,7 +34,7 @@
     <div class="my_lists clearfix">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4" id="test">
             <div class="white_box clearfix">
               <div class="list_header">
                 <h2><a href="#">Movies I want to watch</a></h2>
@@ -92,6 +93,40 @@
                 <input type="text" class="form-control add_new_list_item_input" placeholder="Click to add new list item...">
               </div>
             </div>
+            <% @lists.each do |l| %>
+            <div class="white_box clearfix">
+              <div class="list_header">
+                <h2><a href="#"><%= l['title'] %></a></h2>
+                <h3>Created on 02/01/14 at 11:14am</h3>
+                <ul class="list_actions_wrapper clearfix">
+                  <li>
+                    <a href="#" class="edit_list">edit</a>
+                  </li>
+                  <li>
+                    <span>&middot;</span>
+                  </li>
+                  <li>
+                    <a href="#">delete</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="list_body">
+                <ul class="list_item_wrapper clearfix">
+                  <% l['list_items'].each do |li| %>
+                  <li class="clearfix">
+                    <div class="show_in_view_mode">
+                      <span class="list_item"><%= li['title'] %></span>
+                      <i class="glyphicon glyphicon-move move_list_item"></i>
+                    </div>
+                    <div class="show_in_edit_mode">
+                      <input type="text" class="form-control edit_list_item_input"  value="Harold and Kumar go to White Castle" placeholder="Add new list item...">
+                    </div>
+                  </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>

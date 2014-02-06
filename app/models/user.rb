@@ -16,4 +16,28 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+  def get_my_lists
+    list_items = {}
+    ListItem.where(:user_id => self.id.to_s).each do |li|
+      list_items[li.list_id] ||= []
+      list_items[li.list_id].push({
+        "liid" => li.id,
+        "lid" => li.list_id,
+        "title" => li.title,
+        "text" => li.text,
+        "status" => li.status
+      })
+    end
+    lists = []
+    List.where(:user_id => self.id.to_s).each do |l|
+      lists.push({
+        "lid" => l.id,
+        "list_items" => list_items[l.id.to_s] || [],
+        "title" => l.title,
+        "created_at" => l.created_at
+      })
+    end
+    return lists
+  end
 end

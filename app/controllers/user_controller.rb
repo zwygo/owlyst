@@ -16,5 +16,4 @@ class UserController < ApplicationController
       redirect_to "splash/signup"
     end
   end
-
 end
