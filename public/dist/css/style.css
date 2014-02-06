@@ -148,6 +148,9 @@ body {
   background: #f6f6f6;
   margin-bottom: 2px;
 }
+.white_box .list_item_wrapper li.item_done .list_item {
+  text-decoration: line-through;
+}
 .white_box .list_item_wrapper li:last-child {
   margin-bottom: 0px;
 }

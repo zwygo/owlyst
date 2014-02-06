@@ -89,7 +89,7 @@
               </div>
             </div>
             <% @lists.each do |l| %>
-            <div class="white_box clearfix">
+            <div class="white_box clearfix" lid="<%= l['lid'] %>">
               <div class="list_header">
                 <h2><a href="#"><%= l['title'] %></a></h2>
                 <h3>Created on 02/01/14 at 11:14am</h3>
@@ -131,7 +131,7 @@
             <% end %>
           </div>
           <div class="col-md-8 main_list_area">
-            <div class="white_box main_list_box clearfix" lid="<%= l['lid'] %>">
+            <div class="white_box main_list_box clearfix">
               <div class="list_header">
                 <h2><a href="#">Movies I want to watch</a></h2>
                 <h3>Created on 02/01/14 at 11:14am</h3>
