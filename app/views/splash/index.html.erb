@@ -17,6 +17,7 @@
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="/js/ajax.js"></script>
     <script type="text/javascript" src="/js/owlyst.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
@@ -47,7 +48,7 @@
                     <span>&middot;</span>
                   </li>
                   <li>
-                    <a href="#">delete</a>
+                    <a href="#" class="delete_list">delete</a>
                   </li>
                 </ul>
               </div>
@@ -94,7 +95,7 @@
               </div>
             </div>
             <% @lists.each do |l| %>
-            <div class="white_box clearfix">
+            <div class="white_box clearfix" lid="<%= l['lid'] %>">
               <div class="list_header">
                 <h2><a href="#"><%= l['title'] %></a></h2>
                 <h3>Created on 02/01/14 at 11:14am</h3>
@@ -106,7 +107,7 @@
                     <span>&middot;</span>
                   </li>
                   <li>
-                    <a href="#">delete</a>
+                    <a href="#" class="delete_list">delete</a>
                   </li>
                 </ul>
               </div>
@@ -124,6 +125,7 @@
                   </li>
                   <% end %>
                 </ul>
+                <input type="text" class="form-control add_new_list_item_input" placeholder="Click to add new list item...">
               </div>
             </div>
             <% end %>

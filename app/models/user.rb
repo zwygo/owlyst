@@ -20,20 +20,23 @@ class User < ActiveRecord::Base
   def get_my_lists
     list_items = {}
     ListItem.where(:user_id => self.id.to_s).each do |li|
-      list_items[li.list_id] ||= []
-      list_items[li.list_id].push({
+      list_items[li.id.to_s] = {
         "liid" => li.id,
         "lid" => li.list_id,
         "title" => li.title,
         "text" => li.text,
         "status" => li.status
-      })
+      }
     end
     lists = []
     List.where(:user_id => self.id.to_s).each do |l|
+      list_order = l['list_item_ids']
+      items = []
+      puts list_order
+      list_order.each{|lo| items.push(list_items[lo])}
       lists.push({
         "lid" => l.id,
-        "list_items" => list_items[l.id.to_s] || [],
+        "list_items" => items,
         "title" => l.title,
         "created_at" => l.created_at
       })
