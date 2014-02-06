@@ -159,11 +159,11 @@
                   <li class="clearfix show_in_edit_mode">
                     <input type="text" class="form-control add_new_list_item_input" placeholder="Enter list title...">
                   </li>
-                  <li class="clearfix" liid="<%= li['liid']%>">
+                  <li class="clearfix olist_item <%if li['status'] && li['status']=='done'%>item_done<%end%>" liid="<%= li['liid']%>">
                     <div class="show_in_view_mode">
                       <span class="checkbox list_item">
                         <label>
-                          <input type="checkbox" value="">
+                          <input type="checkbox" class="status_check" value="" <%if li['status'] && li['status']=='done'%>checked="checked"<%end%>>
                           <%= li['title'] %>
                         </label>
                       </span>

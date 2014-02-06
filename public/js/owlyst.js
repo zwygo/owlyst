@@ -66,4 +66,27 @@ $(document).ready(function() {
     });
     return false;
   });
+
+  $(".status_check").change(function() {
+    var liid = $(this).closest(".olist_item").attr("liid");
+    var status;
+    if ($(this).is(":checked")) {
+      $(this).closest(".olist_item").addClass("item_done");
+      status = "done";
+    } else {
+      $(this).closest(".olist_item").removeClass("item_done");
+      status = "open";
+    }
+    $.ajax({
+      url: "/list_item/update_status",
+      data: {liid:liid,status: status},
+      dataType: "json",
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(err) {console.log(err);}
+    });
+  });
 });
+
+
