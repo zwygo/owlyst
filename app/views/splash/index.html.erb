@@ -17,6 +17,7 @@
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="/js/ajax.js"></script>
     <script type="text/javascript" src="/js/owlyst.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
@@ -47,7 +48,7 @@
                     <span>&middot;</span>
                   </li>
                   <li>
-                    <a href="#">delete</a>
+                    <a href="#" class="delete_list">delete</a>
                   </li>
                 </ul>
               </div>
@@ -130,7 +131,7 @@
             <% end %>
           </div>
           <div class="col-md-8 main_list_area">
-            <div class="white_box main_list_box clearfix">
+            <div class="white_box main_list_box clearfix" lid="<%= l['lid'] %>">
               <div class="list_header">
                 <h2><a href="#">Movies I want to watch</a></h2>
                 <h3>Created on 02/01/14 at 11:14am</h3>
@@ -142,7 +143,7 @@
                     <span>&middot;</span>
                   </li>
                   <li>
-                    <a href="#">delete</a>
+                    <a href="#" class="delete_list">delete</a>
                   </li>
                 </ul>
               </div>

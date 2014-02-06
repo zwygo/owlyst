@@ -2,7 +2,7 @@ $(document).ready(function() {
   $(".list_item_wrapper").sortable({handle: ".move_list_item"});
 
   $(".edit_list").click(function() {
-
+    $(this).closest(".white_box").find(".list_item_wrapper").addClass("edit_mode");
   });
 
   $("#create_list").click(function() {
@@ -26,5 +26,25 @@ $(document).ready(function() {
       },
       error: function(err) {console.log(err);}
     });
+  });
+
+  $(".delete_list").click(function() {
+    var c = confirm("Are you sure you want to delete?");
+    if (!c)
+      return false;
+    var lid = $(this).closest(".white_box").attr("lid");
+    $.ajax({
+      url: "/list/destroy",
+      data: {lid: lid},
+      dataType: "json",
+      success: function(data) {
+        console.log(data);
+        if (data && data.lid) {
+          $("[lid='" + data.lid + "']").remove();
+        }
+      },
+      error: function(err) {console.log(err);}
+    });
+    return false;
   });
 });

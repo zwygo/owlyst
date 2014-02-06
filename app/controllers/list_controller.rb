@@ -20,4 +20,13 @@ class ListController < ApplicationController
     end
   end
 
+  def destroy
+    lid = params[:lid]
+    if List.destroy(lid)
+      render :json => {:lid => lid}
+    else
+      render :json => {:error => "Did not delete"}
+    end
+  end
+
 end
