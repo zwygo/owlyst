@@ -138,7 +138,7 @@
                     <span>&middot;</span>
                   </li>
                   <li>
-                    <a href="#">delete</a>
+                    <a href="#" class="delete_list">delete</a>
                   </li>
                 </ul>
               -->
@@ -146,7 +146,7 @@
               <div class="list_body">
                 <ul class="list_item_wrapper clearfix">
                   <% l['list_items'].each do |li| %>
-                  <li class="clearfix">
+                  <li class="clearfix" liid="<%= li['liid']%>">
                     <div class="show_in_view_mode">
                       <span class="checkbox list_item">
                         <label>
@@ -164,6 +164,7 @@
                   </li>
                   <% end %>
                 </ul>
+                <input type="text" class="form-control add_new_list_item_input" placeholder="Click to add new list item...">
               </div>
               <div class="list_actions_wrapper2 clearfix">
                 <ul class="list_actions_list clearfix">

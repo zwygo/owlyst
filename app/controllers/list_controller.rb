@@ -29,4 +29,15 @@ class ListController < ApplicationController
     end
   end
 
+  def reorder_items
+    newOrder = params[:order]
+    list = List.find(params[:lid])
+    render :json => {:error => "List not found with id=#{params[:lid]}"} if list.nil?
+    if list.reorder(newOrder)
+      render :json => {:success => newOrder}
+    else
+      render :json => {:error => "Unable to reorder list"}
+    end
+  end
+
 end
