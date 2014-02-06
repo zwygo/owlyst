@@ -1,10 +1,60 @@
+function initNewListHandlers() {
+  $("#save_new_list").unbind().click(function() {
+    var title = $("#new_list_title").val();
+    var listItems = [];
+    $(".new_list_list_item").each(function() {
+      if ($(this).val())
+        listItems.push($(this).val());
+    });
+    if (!title || listItems.length == 0) {
+      alert("You must have a title and at least one list item");
+      return false;
+    }
+    var params = {
+      title: title,
+      items: listItems
+    }
+    console.log(params);
+    $.ajax({
+      url: "/list/create",
+      data: params,
+      dataType: "json",
+      success: function(data) {
+        console.log(data);
+        alert("Success!");
+        $("#cancel_new_list").click();
+      },
+      error: function(err) {console.log(err);}
+    });
+  });
+  $("#cancel_new_list").unbind().click(function() {
+    $("#new_list_title").val('');
+    var htmlToAdd = $(this).closest(".white_box").find(".list_body").children(".new_list_list_item_wrapper")[0].outerHTML;
+    $(this).closest(".white_box").find(".list_body").children(".new_list_list_item_wrapper").remove();
+    $(this).closest(".white_box").find(".list_body").append(htmlToAdd);
+    initNewListHandlers();
+  });
+  $(".new_list_list_item").unbind().keyup(function(e) {
+    if (e.which == 13) {
+      if ($(this).val())
+        if ($(this).parent().next().length == 0) {
+          $(this).closest(".list_body").append($(this).parent()[0].outerHTML);
+          $(this).parent().next().children().focus();
+          initNewListHandlers();
+        } else {
+          $(this).parent().next().children().focus();
+        }
+    }
+  });
+}
+
 $(document).ready(function() {
   $(".list_item_wrapper").sortable({
     handle: ".move_list_item",
     stop: function(event, ui) {
       var lid = ui.item.closest(".white_box").attr("lid");
       var newOrder = [];
-      ui.item.siblings().andSelf().each(function() {
+      ui.item.siblings(".olist_item").andSelf().each(function() {
         newOrder.push($(this).attr("liid"));
       });
       console.log(newOrder);
@@ -22,29 +72,6 @@ $(document).ready(function() {
 
   $(".edit_list").click(function() {
     $(this).closest(".white_box").find(".list_item_wrapper").addClass("edit_mode");
-  });
-
-  $("#create_list").click(function() {
-    var title = $("#create_name").val();
-    var items = [];
-    $(".create_item").each(function() {
-      if ($(this).val())
-        items.push($(this).val());
-    });
-    var params = {
-      title: title,
-      items: items
-    }
-    console.log(params);
-    $.ajax({
-      url: "/list/create",
-      data: params,
-      dataType: "json",
-      success: function(data) {
-        console.log(data);
-      },
-      error: function(err) {console.log(err);}
-    });
   });
 
   $(".delete_list").click(function() {
@@ -87,6 +114,7 @@ $(document).ready(function() {
       error: function(err) {console.log(err);}
     });
   });
+  initNewListHandlers();
 });
 
 
