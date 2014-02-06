@@ -12,6 +12,23 @@ body {
   padding-top: 50px;
   padding-bottom: 20px;
   background: #e6e6e6;
+  overflow: hidden;
+}
+.list_row{
+	height: 100%;
+	position: relative;
+}
+.list_container{
+	height: 100%;
+}
+.my_lists{
+	position: absolute;
+	top: 56px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+	height: 100%;
 }
 .form-control{
 	.border-radius(0);
@@ -27,7 +44,7 @@ body {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.15);
 	//background-color: @main_purple;
 	border-color: transparent;
-	background-color: @dark_grey;
+	background-color: rgba(0,0,0,.8);
 	box-shadow: 0 1px 0 rgba(255,255,255,.1);
 
 	.navbar-nav > li > a{
@@ -68,11 +85,18 @@ body {
 .white_box{
 	margin: 20px 0px;
 	background: white;
-	border: 1px solid #ddd;
+	border: 1px solid #ccc;
 	color: #454545;
-	position: relative;
+	//position: relative;
 	font-size: 13px;
-	.box-shadow(0px 2px 5px #ccc);
+
+	&.main_list_box{
+		height: 100%;
+		.box-shadow(0px 0px 0px #000);
+		border: none;
+		overflow: auto;
+	}
+	//.box-shadow(0px 2px 5px #ccc);
 	.list_header{
 		h2{
 			font-size: 24px;
@@ -113,11 +137,15 @@ body {
 		}
 	}
 	.list_body{
+		.add_new_list_item_input_wrapper{
+			padding: 10px;
+			background: #ccc;
+		}
 		.add_new_list_item_input{
 			border: none;
 			.box-shadow(0px 0px 0px #000);
 			font-size: 15px;
-
+			margin: 0px;
 		}
 	}
 	.list_item_wrapper{
@@ -144,6 +172,10 @@ body {
 			background: #f6f6f6;
 			margin-bottom: 2px;
 
+			&:last-child{
+				margin-bottom: 0px;
+			}
+
 			.move_list_item{
 				opacity: 0.2;
 				transition:.5s;
@@ -156,6 +188,7 @@ body {
 			.list_item{
 				width: 94%;
 				float: left;
+				margin: 0px;
 			}
 			.edit_list_item_input{
 				margin: 0px;
@@ -166,4 +199,27 @@ body {
 			}
 		}
 	}
+}
+.main_list_area{
+	height: 100%;
+	background: white;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	position: absolute;
+	left: 400px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow: auto;
+}
+
+.side_list_area{
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: auto;
+	width: 400px;
+	overflow: auto;
 }
