@@ -87,6 +87,48 @@ body {
   box-shadow: 0px 0px 0px #000000;
   border: none;
   overflow: auto;
+  font-size: 18px;
+}
+.white_box.main_list_box .list_header {
+  border-bottom: 1px dashed #ddd;
+  margin-bottom: 10px;
+}
+.white_box.main_list_box .list_header h2 {
+  font-size: 36px;
+  color: #333;
+}
+.white_box.main_list_box .list_header h3 {
+  font-size: 20px;
+}
+.white_box.main_list_box .list_header .list_actions_wrapper {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.white_box.main_list_box .list_header .list_actions_wrapper li {
+  margin-right: 20px;
+}
+.white_box.main_list_box .list_body {
+  padding: 10px;
+}
+.white_box.main_list_box .list_body .list_description {
+  margin-bottom: 30px;
+}
+.white_box.main_list_box .list_item_wrapper {
+  font-size: 18px;
+}
+.white_box.main_list_box .list_item_wrapper li {
+  margin-bottom: 10px;
+}
+.white_box.main_list_box .list_item_wrapper li:last-child {
+  margin-bottom: 10px;
+}
+.white_box.main_list_box .list_item_wrapper .list_item .list_item_title {
+  display: block;
+  font-weight: 600;
+}
+.white_box.main_list_box .list_item_wrapper .list_item .list_item_description {
+  display: block;
 }
 .white_box .list_header h2 {
   font-size: 24px;
@@ -127,6 +169,10 @@ body {
   float: left;
   margin-right: 5px;
   color: #428bca;
+}
+.white_box .list_header .list_actions_wrapper li .glyphicon {
+  margin-right: 5px;
+  opacity: 0.6;
 }
 .white_box .list_actions_wrapper2 {
   background: #555;
